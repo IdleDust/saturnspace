@@ -40,6 +40,28 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating MyGuests table: " . $conn->error;
 }
 
+//$sql = "CREATE TABLE IF NOT EXISTS products(
+//    u_id INT(6) NOT NULL PRIMARY KEY,
+//    productname VARCHAR (30),
+//    title VARCHAR (30),
+//    price NUMBER (5),
+//    description TEXT)";
+//
+//if ($conn->query($sql) === TRUE) {
+//    echo '<script>console.log("products table created successfully\n")</script>';
+//} else {
+//    echo "Error creating products table: " . $conn->error;
+//}
+
+//$sql = "INSERT INTO product (u_id, productname, title, price, description)
+//VALUES ('1', 'Earth', 'Third planet from the Sun', NULL, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4 billion years ago.')";
+//
+//if ($conn->query($sql) === TRUE) {
+//    echo "New record created successfully";
+//} else {
+//    echo "Error: " . $sql . "<br>" . $conn->error;
+//}
+
 /*
 $sql = "INSERT INTO user (username, password, email)
 VALUES ('David', '1234', 'david@gmail.com')";
