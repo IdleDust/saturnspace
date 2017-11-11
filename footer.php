@@ -1,7 +1,7 @@
 
-<footer class="footer" style="height: 50px; background-color: rgba(248, 249, 250);">
+<footer class="footer fixed-bottom">
     <div class="container">
-        <span class="text-muted">© Company 2017</span>
+        <span class="text-muted">Saturn Space @ 2017 Rights Reserved</span>
     </div>
 </footer>
 
