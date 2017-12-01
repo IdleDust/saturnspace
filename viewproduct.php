@@ -28,7 +28,7 @@
                         <h4> <?php echo $curProductTitle; ?> </h4>
                         <div class="text-center">
                             <?php
-                                echo "<img class='center-block' src='img/product". $id . ".jpg' width='380' height='380'>";
+                                echo "<img class='center-block' src='img/product". $id . ".jpeg' width='350' height='490'>";
                             ?>
                         </div>
                         <div class="row"> <?php echo $curProductDescription; ?> </div>

@@ -75,9 +75,9 @@
             <div class="row">
                 <?php
                 for ($i = 1; $i <= 10; $i++) {
-                    echo "<div class='col-sm-6 col-md-4 col-lg-4'>";
+                    echo "<div class='col-sm-6 col-md-3 col-lg-3'>";
                     echo "<a href='viewproduct.php?id=" . $i . "'>";
-                    echo "<img src='img/product". $i. ".jpg'" . " width='315' height='315'>
+                    echo "<img src='img/product". $i. ".jpeg'" . " width='250' height='350'>
                     </a>";
                     $curProduct = $products["product" . $i];
                     echo "<p>" . $curProduct['title'] . "</p>" . "</div>";
@@ -87,6 +87,7 @@
         </div>
     </div>
 </section>
+
 
 <?php include_once 'footer.php'?>
 
