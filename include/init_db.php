@@ -28,30 +28,50 @@ if ($conn->query($sql) === TRUE) {
     echo "Error selecting database: " . $conn->error;
 }
 
+$sql_drop_table = "DROP TABLE user";
+if ($conn->query($sql_drop_table) === TRUE) {
+    echo '<script>console.log("user table dropped successfully\n")</script>';
+} else {
+    echo "Error dropping user table: " . $conn->error;
+}
+
+// first name, last name, email, home address, home phone and cell phone.
 $sql = "CREATE TABLE IF NOT EXISTS user(
     u_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-    username VARCHAR (30) NOT NULL,
-    password VARCHAR (30) NOT NULL,
+    firstname VARCHAR (30) NOT NULL,
+    lastname VARCHAR (30) NOT NULL,
     email VARCHAR(50),
+    home_address VARCHAR (80),
+    home_phone VARCHAR (30),
+    cell_phone VARCHAR (30),
     reg_date TIMESTAMP)";
 if ($conn->query($sql) === TRUE) {
     echo '<script>console.log("user table created successfully\n")</script>';
 } else {
-    echo "Error creating MyGuests table: " . $conn->error;
+    echo "Error creating user table: " . $conn->error;
 }
 
-//$sql = "CREATE TABLE IF NOT EXISTS products(
-//    u_id INT(6) NOT NULL PRIMARY KEY,
-//    productname VARCHAR (30),
-//    title VARCHAR (30),
-//    price NUMBER (5),
-//    description TEXT)";
-//
-//if ($conn->query($sql) === TRUE) {
-//    echo '<script>console.log("products table created successfully\n")</script>';
-//} else {
-//    echo "Error creating products table: " . $conn->error;
-//}
+$drop_table_products = "DROP TABLE products";
+if ($conn->query($drop_table_products) === TRUE) {
+    echo '<script>console.log("products table dropped successfully\n")</script>';
+} else {
+    echo "Error dropping products table: " . $conn->error;
+}
+
+    $sql = "CREATE TABLE IF NOT EXISTS products(
+    u_id INT(6) NOT NULL PRIMARY KEY,
+    title VARCHAR (30),
+    price NUMBER (10),
+    director VARCHAR (30),
+    release_date DATE,
+    image TEXT, 
+    description TEXT)";
+
+if ($conn->query($sql) === TRUE) {
+    echo '<script>console.log("products table created successfully\n")</script>';
+} else {
+    echo "Error creating products table: " . $conn->error;
+}
 
 //$sql = "INSERT INTO product (u_id, productname, title, price, description)
 //VALUES ('1', 'Earth', 'Third planet from the Sun', NULL, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4 billion years ago.')";
