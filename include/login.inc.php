@@ -7,8 +7,10 @@
         $u_name = trim($_POST['username']);
         $u_pwd = trim($_POST['pwd']);
         $user_id = NULL;
-        $isfound = false;
 
+
+        /*
+        $isfound = false;
         $sql = "SELECT u_id, username, password FROM user";
         $result = $conn->query($sql);
 
@@ -22,8 +24,10 @@
                     break;
                 }
             }
-            if ($isfound) {
-                $_SESSION['u_id'] = $user_id;
+        */
+
+        if ($u_name == "admin" AND $u_pwd == "password") {
+                $_SESSION['u_id'] = 1;
                 //to do: list all user here
                 //
 
@@ -34,13 +38,12 @@
 //                        echo $row['username'] . "  " . $row[email];
 //                    }
 //                }
-                header("Location: ../users.php?login=succeed");
+                header("Location: ../user.php?login=succeed");
 
             }
             else echo "user not found.";
-        } else {
-            echo "No records for user";
-        }
+
+
 
     } else {
         header("Location: ../login.php?login=error");

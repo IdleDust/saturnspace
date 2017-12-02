@@ -1,12 +1,22 @@
 <?php
     include_once 'header.php';
-    require_once  'include/products_data.php';
-    $products = json_decode($json, true);
+    require_once 'include/connect_db.php';
+
+    $sql = "select * from products";
+    $results = $conn->query($sql);
+    $products = array();
+    if ($results->num_rows > 0) {
+        while($movie = $results->fetch_assoc()) {
+            $m_id = $movie['p_id'];
+            $products[$m_id] = $movie;
+        }
+    }
+
+
     $url = $_SERVER['QUERY_STRING'];
     $array = explode('=', $url);
     $id = $array[1];
-    $productKey = "product" . $id;
-    $curProduct = $products[$productKey];
+    $curProduct = $products[$id];
     $curProductTitle = $curProduct["title"];
     $curProductDescription = $curProduct["description"];
 ?>
