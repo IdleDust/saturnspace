@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="user.php">User</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="marketPlace.php">CurlLab</a>
+                    </li>
                 </ul>
             </div>
         </nav>
